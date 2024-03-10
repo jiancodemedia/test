@@ -159,3 +159,51 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 // }
 
 // console.log(has([1, 12, 14, 15]))
+
+// function makeArray(arr) {
+//   const numb = []
+//   arr.forEach(x => {
+//     x.forEach((y) => {
+//       if (typeof y === "number") {
+//         numb.push(y);
+//       }
+//     });
+//   })
+//   return numb
+// }
+
+// function makeArray(arr) {
+//   let numb = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let a = 0; a < arr[i].length; a++) {
+//       if (typeof arr[i][a] === "number") {
+//         numb.push(arr[i][a]);
+//       }
+//     }
+//   }
+//   return numb;
+// }
+// console.log(
+//   makeArray([[9, 4, "g"],["y", 8],["y", 8]]));
+
+function findItems(array1, array2) {
+  const result = []; // 
+
+  array1.forEach((value) => { // f, 1
+    // check if array2 has value from array1
+    const array2HasTheValue = array2.includes(value);
+    // if array 2 dont have value from array 1 stops. 
+    if (!array2HasTheValue) return;
+    // check if result has the same value from array1
+    const valueExistInResult = result.includes(value);
+    //if result has same value from array1, then stop
+    if (valueExistInResult) return;
+
+    result.push(value);
+  });
+
+  return result;
+}
+
+console.log(findItems(['f', 1, "g", "g", 'g', "p", 9, "t"], [1, 2, "g", 'g', 2, 6, 9]));
