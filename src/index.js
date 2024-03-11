@@ -171,6 +171,7 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 //   })
 //   return numb
 // }
+// console.log(makeArray([[1, 'a', 2 ,'u'], [5, 't', 9]]))
 
 // function makeArray(arr) {
 //   let numb = [];
@@ -187,23 +188,44 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 // console.log(
 //   makeArray([[9, 4, "g"],["y", 8],["y", 8]]));
 
-function findItems(array1, array2) {
-  const result = []; // 
+// function findItems(array1, array2) {
+//   const result = []; // 
 
-  array1.forEach((value) => { // f, 1
-    // check if array2 has value from array1
-    const array2HasTheValue = array2.includes(value);
-    // if array 2 dont have value from array 1 stops. 
-    if (!array2HasTheValue) return;
-    // check if result has the same value from array1
-    const valueExistInResult = result.includes(value);
-    //if result has same value from array1, then stop
-    if (valueExistInResult) return;
+//   array1.forEach((value) => { // f, 1
+//     // check if array2 has value from array1
+//     const array2HasTheValue = array2.includes(value);
+//     // if array 2 dont have value from array 1 stops. 
+//     if (!array2HasTheValue) return;
+//     // check if result has the same value from array1
+//     const valueExistInResult = result.includes(value);
+//     //if result has same value from array1, then stop
+//     if (valueExistInResult) return;
 
-    result.push(value);
-  });
+//     result.push(value);
+//   });
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(findItems(['f', 1, "g", "g", 'g', "p", 9, "t"], [1, 2, "g", 'g', 2, 6, 9]));
+// console.log(findItems(['f', 1, "g", "g", 'g', "p", 9, "t"], [1, 2, "g", 'g', 2, 6, 9]));
+
+// function findItems(array1, array2) {
+//   // Items found on array2
+//   const itemsFound = [];
+
+//   // For each item in array1
+//   array1.forEach((item) => {
+//     // check if array2 has item
+//     const hasItem = array2.includes(item);
+//     // check if item has already found before. This is to make sure itemsFound dont have duplicates.
+//     const alreadyFound = itemsFound.includes(item);
+//     // if hasItem is true and alreadyFound is false then add the item into itemsFound.
+//     if (hasItem && !alreadyFound) 
+//     itemsFound.push(item);
+//   });
+
+//   // return all items that found.
+//   return itemsFound;
+// }
+
+// console.log(findItems(['f', 1, "g", "g", 'g', "p", 9, "t"], [1, 2, "g", 'g', 2, 6, 9]));
