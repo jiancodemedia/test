@@ -10,21 +10,19 @@
 
 // console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));
 
+// function orderSupplies(supplies, numGuests) {
+//   const values = Object.values(supplies);
+//   let total =0;
+//   values.forEach((i) => {
+//     total += i
+//   })
 
-/*function orderSupplies(supplies, numGuests) {
-  const values = Object.values(supplies);
-  let total =0;
-  values.forEach((i) => {
-    total += i
-  })
+//   return total * numGuests;
+// }
 
-  return total * cost;
-}
+// //console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2));
 
-console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2));
-
-console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*/
-
+// console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));
 
 /*function checkForEnoughBeds(beds, numOfPeople) {
   if(beds.doubles * 2 + beds.singles >= numOfPeople) {
@@ -48,15 +46,10 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 //     console.log(a)
 // }
 
-
-
-
-
 // const alphabets = ["a", "b", "b", "d", "d", "d"];
 // const result = alphabets.filter(a => a == "d" || a == "a")
 
 // console.log(result)
-
 
 // const character = {
 //   name: "cat",
@@ -79,17 +72,16 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 // }
 // console.log(odd([1, 2, 3, 4, 5, 6, 7, 9]));
 
-
 // function findFirstOdd(numbers) {
 //   for (let i = 0; i < numbers.length; i++) {
 //       if (numbers[i] % 2 !== 0) {
 //           return numbers[i];
 //       }
 //   }
-//   return undefined; 
+//   return undefined;
 // }
 
-// console.log(findFirstOdd([2, 4, 6, 8, 9, 10])); 
+// console.log(findFirstOdd([2, 4, 6, 8, 9, 10]));
 
 // export function find(items) {
 
@@ -107,7 +99,6 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 // }
 
 // console.log(find(['keepOnlyMe', 'notMe', 4, 5, 6, 'hell']))
-
 
 // function isThisAPalindrome(str) {
 
@@ -189,12 +180,12 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 //   makeArray([[9, 4, "g"],["y", 8],["y", 8]]));
 
 // function findItems(array1, array2) {
-//   const result = []; // 
+//   const result = []; //
 
 //   array1.forEach((value) => { // f, 1
 //     // check if array2 has value from array1
 //     const array2HasTheValue = array2.includes(value);
-//     // if array 2 dont have value from array 1 stops. 
+//     // if array 2 dont have value from array 1 stops.
 //     if (!array2HasTheValue) return;
 //     // check if result has the same value from array1
 //     const valueExistInResult = result.includes(value);
@@ -220,7 +211,7 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 //     // check if item has already found before. This is to make sure itemsFound dont have duplicates.
 //     const alreadyFound = itemsFound.includes(item);
 //     // if hasItem is true and alreadyFound is false then add the item into itemsFound.
-//     if (hasItem && !alreadyFound) 
+//     if (hasItem && !alreadyFound)
 //     itemsFound.push(item);
 //   });
 
@@ -229,3 +220,22 @@ console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));*
 // }
 
 // console.log(findItems(['f', 1, "g", "g", 'g', "p", 9, "t"], [1, 2, "g", 'g', 2, 6, 9]));
+
+function findItems(array1, array2) {
+  const uniqueItems = {};
+
+  array1.forEach((item) => {
+    uniqueItems[item] = true;
+  });
+
+  const sameItems = [];
+  array2.forEach((item2) => {
+    if (uniqueItems[item2]) {
+      sameItems.push(item2);
+      uniqueItems[item2] = false;
+    }
+  });
+  return sameItems;
+}
+
+console.log(findItems(["a", "b"], ['c', 'a', "a"]));
