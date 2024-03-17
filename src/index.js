@@ -191,6 +191,22 @@
 //     console.log(calculateTables(14, 6))
 // should return { tables: 2 , remainingGuests: 2 }
 
+// function calculateTables(guests, seats) {
+//   let tables = 0;
+//   let remainingGuests = 0;
+//   let maxGuest = 0;
+//   for (let i = 1; maxGuest <= guests; i++) {
+//     maxGuest = seats * i;
+//     tables = i;
+//   }
+//   if (maxGuest > guests) {
+//     tables = tables - 1;
+//     remainingGuests = guests - tables * seats;
+//   }
+//   return { tables: tables, remainingGuests: remainingGuests };
+// }
+// console.log(calculateTables(100, 6));
+
 ///////////////////////////////////////////////////////////////////
 
 // function orderSupplies(supplies, numGuests) {
@@ -215,6 +231,20 @@
 // console.log(calculateTaxiFare(360))
 // should return 710
 
+// function calculateTaxiFare(seconds) {
+//   const minutes = Math.ceil(seconds / 60);
+//   const baseRate = 500;
+//   const CostPerMinute = 70;
+//   let costMoreThan3Mins = 0; // Math.max(0, minutes - 3) * CostPerMinute;
+//   const moreThan3Mins = minutes - 3;
+//   if (moreThan3Mins > 0) {
+//     costMoreThan3Mins = moreThan3Mins * CostPerMinute;
+//   }
+//   const totalCost = baseRate + costMoreThan3Mins;
+//   return totalCost;
+// }
+// console.log(calculateTaxiFare(140));
+
 ///////////////////////////////////////////////////////////////////
 
 // function pickWinners(numbers) {
@@ -230,6 +260,17 @@
 // console.log(pickWinners([6, 7, 12, 49]))
 // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
 
+// function pickWinners(numbers) {
+//     const winners = []
+//     for (let index = 1; index < numbers.length; index+=2) {
+//     if (numbers[index] % 2 === 1 ) {
+//         const seat = { seat: index, ticketCost: numbers[index] };
+//         winners.push(seat)
+//     }
+//     }
+//     return winners
+// }
+//  console.log(pickWinners([6, 7, 12, 49]));
 ///////////////////////////////////////////////////////////////////
 
 // function gatherFeedback(feedbackArray) {
@@ -253,6 +294,28 @@
 //   ])
 // );
 // returns {positive: 1, negative: 1, neutral:1}
+
+function gatherFeedback(feedbackArray) {
+    let feedBack = { positive: 0, negative: 0, neutral: 0 };
+    feedbackArray.forEach(([name, value]) => { 
+        if (value <= 10 && value >= 7) {
+          feedBack.positive++;
+        } else if (value <= 6 && value >= 4) {
+          feedBack.neutral++;
+        } else if (value <= 3 && value >= 0) {
+          feedBack.negative++;
+        } 
+    });
+    return feedBack
+} 
+console.log(
+  gatherFeedback([
+    ["maddie", 9],
+    ["jatinder", 6],
+    ["rose", 6],
+  ])
+)
+
 
 ///////////////////////////////////////////////////////////////////
 
