@@ -191,6 +191,22 @@
 //     console.log(calculateTables(14, 6))
 // should return { tables: 2 , remainingGuests: 2 }
 
+// function calculateTables(guests, seats) {
+//   let tables = 0;
+//   let remainingGuests = 0;
+//   let maxGuest = 0;
+//   for (let i = 1; maxGuest <= guests; i++) {
+//     maxGuest = seats * i;
+//     tables = i;
+//   }
+//   if (maxGuest > guests) {
+//     tables = tables - 1;
+//     remainingGuests = guests - tables * seats;
+//   }
+//   return { tables: tables, remainingGuests: remainingGuests };
+// }
+// console.log(calculateTables(100, 6));
+
 ///////////////////////////////////////////////////////////////////
 
 // function orderSupplies(supplies, numGuests) {
@@ -215,6 +231,20 @@
 // console.log(calculateTaxiFare(360))
 // should return 710
 
+// function calculateTaxiFare(seconds) {
+//   const minutes = Math.ceil(seconds / 60);
+//   const baseRate = 500;
+//   const CostPerMinute = 70;
+//   let costMoreThan3Mins = 0; // Math.max(0, minutes - 3) * CostPerMinute;
+//   const moreThan3Mins = minutes - 3;
+//   if (moreThan3Mins > 0) {
+//     costMoreThan3Mins = moreThan3Mins * CostPerMinute;
+//   }
+//   const totalCost = baseRate + costMoreThan3Mins;
+//   return totalCost;
+// }
+// console.log(calculateTaxiFare(140));
+
 ///////////////////////////////////////////////////////////////////
 
 // function pickWinners(numbers) {
@@ -230,6 +260,17 @@
 // console.log(pickWinners([6, 7, 12, 49]))
 // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
 
+// function pickWinners(numbers) {
+//     const winners = []
+//     for (let index = 1; index < numbers.length; index+=2) {
+//     if (numbers[index] % 2 === 1 ) {
+//         const seat = { seat: index, ticketCost: numbers[index] };
+//         winners.push(seat)
+//     }
+//     }
+//     return winners
+// }
+//  console.log(pickWinners([6, 7, 12, 49]));
 ///////////////////////////////////////////////////////////////////
 
 // function gatherFeedback(feedbackArray) {
@@ -254,6 +295,260 @@
 // );
 // returns {positive: 1, negative: 1, neutral:1}
 
+<<<<<<< HEAD
+// function gatherFeedback(feedbackArray) {
+//     let feedBack = { positive: 0, negative: 0, neutral: 0 };
+//     feedbackArray.forEach(([name, value]) => {
+//         if (value <= 10 && value >= 7) {
+//           feedBack.positive++;
+//         } else if (value <= 6 && value >= 4) {
+//           feedBack.neutral++;
+//         } else if (value <= 3 && value >= 0) {
+//           feedBack.negative++;
+//         }
+//     });
+//     return feedBack
+// }
+// console.log(
+//   gatherFeedback([
+//     ["maddie", 9],
+//     ["jatinder", 6],
+//     ["rose", 6],
+//   ])
+// )
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+// function checkForEnoughBeds(beds, numOfPeople) {
+//   if(beds.doubles * 2 + beds.singles >= numOfPeople) {
+//       return true
+//   }
+//   else {
+//     return false}
+//   }
+//   console.log(checkForEnoughBeds({ doubles: 0, singles: 6 }, 7))
+
+///////////////////////////////////////////////////////////////////
+
+// function makeAltArray(array) {
+//     if (array.length <= 1) {
+//         return array;
+//     }
+//     const result = [];
+//     array.forEach((element, index) => {
+//         if (index % 2 === 0) {
+//             result.push(element);
+//         }
+//     });
+//     return result;
+// }
+
+// // function makeAltArray (array) {
+// //     if (array.length <= 1) {
+// //         return array
+// //     }
+// //     const result = []
+// //     for (let i = 0; i < array.length; i += 2) {
+// //         result.push(array[i])
+// //     }
+// //     return result
+// // }
+// console.log(makeAltArray(['a', 'b', 'c', 'd', 1]))
+
+///////////////////////////////////////////////////////////////////
+
+// function addSoundToPets(pets) {
+//     pets.forEach(pet => {
+//       if (pet.type === 'dog') {
+//         pet.sound = 'woof!'
+//       }
+//       if(pet.type === 'cat') {
+//         pet.sound = 'meow!'
+//       }
+//     })
+//       return pets
+//     }
+
+// function addSoundToPets(pets) {
+//     for (let i = 0; i < pets.length; i++) {
+//      const pet = pets[i];
+//             if (pet.type === 'dog') {
+//           pet.sound = 'woof!';
+//             }
+//             if (pet.type === 'cat') {
+//           pet.sound = 'meow!';
+//             }
+//         }
+
+//         return pets;
+//     }
+// console.log(addSoundToPets([
+//   { name: 'Bolin', type: 'cat' },
+//   { name: 'Lily', type: 'dog' },
+// ]))
+
+///////////////////////////////////////////////////////////////////
+
+function countCapitals (str) {
+    let count = 0
+for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+        count++
+    }
+}
+return count
+}
+console.log(countCapitals("Hello World! How Are You?"));
+
+// function countCapitals(str) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//       if (str[i] >= 'A' && str[i] <= 'Z') {
+//         count++
+//       }
+//     }
+//     return count;
+//   }
+
+// function countCapitals(str) {
+//   let count = 0;
+//   str.split("").forEach((x) => {
+//     if (x >= "A" && x <= "Z") {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
+
+
+///////////////////////////////////////////////////////////////////
+
+// function findKnifeAndFork (utensils) {
+//   const found = {knife: 0, fork: 0}
+//   utensils.forEach(item => {
+//     if (item.toLowerCase() === 'knife') {
+//       found.knife++
+//     }
+//     if (item.toLowerCase() === 'fork') {
+//       found.fork++
+//     }
+//   });
+//   return found
+// }
+
+// function findKnifeAndFork(utensils) {
+//   const found = { knife: 0, fork: 0 };
+//   for (let i = 0; i < utensils.length; i++) {
+//     const item = utensils[i].toLowerCase();
+//     if (item === "knife") {
+//       found.knife++;
+//     }
+//     if (item === "fork") {
+//       found.fork++;
+//     }
+//   }
+//   return found;
+// }
+// console.log(findKnifeAndFork(["Knife", "fork", "spoon", "fOrk", "knife"]));
+
+///////////////////////////////////////////////////////////////////
+
+// function truncateString(str, value) {
+//     if (str.length > value) {
+//       return str.slice(0, value) + '...';
+//     }
+//     return str;
+//   }
+//   console.log(truncateString("Hello World", 4))
+
+///////////////////////////////////////////////////////////////////
+
+// function oldestPerson(people) {
+//   let oldestPerson = people[0];
+//   for (let i = 0; i < people.length; i++) {
+//     if (people[i].age > oldestPerson.age) {
+//       oldestPerson = people[i];
+//     }
+//   }
+//   return oldestPerson;
+// }
+
+// function oldestPerson(people) {
+//     let oldestPerson = people[0];
+//     people.forEach(person => {
+//       if (person.age > oldestPerson.age) {
+//         oldestPerson = person;
+//       }
+//     });
+//     return oldestPerson;
+//   }
+// console.log(
+//   oldestPerson([
+//     { name: "Alice", age: 30 },
+//     { name: "Bob", age: 45 },
+//     { name: "Charlie", age: 55 },
+//   ])
+// )
+
+// function oldestPerson(people) {
+//     if (people.length === 0) {
+//         return []; 
+//     }
+//   let oldestAge = people[0].age;
+//   let oldestName = people[0].name;
+//   for (let i = 1; i < people.length; i++) {
+//     if (people[i].age > oldestAge) {
+//       oldestAge = people[i].age;
+//       oldestName = people[i].name;
+//     }
+//   }
+//   return oldestName;
+// }
+// function oldestPerson(people) {
+//     let oldestAge = people[0].age; 
+//     let oldestName = people[0].name; 
+//     people.forEach(person => {
+//       if (person.age > oldestAge) {
+//         oldestAge = person.age; 
+//         oldestName = person.name; 
+//       }
+//     });
+//     return oldestName; 
+//   }
+// console.log(
+//   oldestPerson([
+//     { name: "Alice", age: 30 },
+//     { name: "Bob", age: 45 },
+//     { name: "Charlie", age: 5 },
+//   ])
+// );
+
+=======
+function gatherFeedback(feedbackArray) {
+    let feedBack = { positive: 0, negative: 0, neutral: 0 };
+    feedbackArray.forEach(([name, value]) => { 
+        if (value <= 10 && value >= 7) {
+          feedBack.positive++;
+        } else if (value <= 6 && value >= 4) {
+          feedBack.neutral++;
+        } else if (value <= 3 && value >= 0) {
+          feedBack.negative++;
+        } 
+    });
+    return feedBack
+} 
+console.log(
+  gatherFeedback([
+    ["maddie", 9],
+    ["jatinder", 6],
+    ["rose", 6],
+  ])
+)
+
+
+>>>>>>> b8130f34271fdb242606888eeb13ea98a979d197
 ///////////////////////////////////////////////////////////////////
 
 // function orderSupplies(supplies, numGuests) {
@@ -265,17 +560,6 @@
 //   return total * numGuests;
 // }
 // console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));
-
-///////////////////////////////////////////////////////////////////
-
-// function checkForEnoughBeds(beds, numOfPeople) {
-//   if(beds.doubles * 2 + beds.singles >= numOfPeople) {
-//       return true
-//   }
-//   else {
-//     return false}
-//   }
-//   console.log(checkForEnoughBeds({ doubles: 0, singles: 6 }, 7))
 
 ///////////////////////////////////////////////////////////////////
 
