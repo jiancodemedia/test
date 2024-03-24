@@ -30,6 +30,16 @@
 
 ///////////////////////////////////////////////////////////////////
 
+function retrievePassword(user) {
+  if('password' in user) {
+      return user.password
+  }
+  else undefined
+  }
+  console.log(retrievePassword({ name: 'Lucy', password: 'n0rthc0derzzz' }))
+
+  ///////////////////////////////////////////////////////////////////
+
 // function retrieveKey(object, key) {
 //     if (key in object) {
 //       return object[key];
@@ -74,7 +84,7 @@
 //   }
 //   let biggest = numbers[0];
 //   let smallest = numbers[0];
-//   numbers.forEach((x) => {
+//   numbers.forEach(x => {
 //     if (x > biggest) {
 //       biggest = x;
 //     }
@@ -178,6 +188,15 @@
 //     }
 //     console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2))
 
+// function orderSupplies(supplies, guests) {
+//   let totalCost = 0;
+//   for (let x in supplies) {
+//       totalCost += supplies[x] * guests;
+//   }
+//   return totalCost;
+// }
+// console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2))
+
 ///////////////////////////////////////////////////////////////////
 
 // function calculateTables(guests, seats) {
@@ -206,16 +225,6 @@
 //   return { tables: tables, remainingGuests: remainingGuests };
 // }
 // console.log(calculateTables(100, 6));
-
-///////////////////////////////////////////////////////////////////
-
-// function orderSupplies(supplies, numGuests) {
-//   let totalCost = 0;
-//   for (let x in supplies) {
-//       totalCost += supplies[x] * numGuests;
-//   }
-//   return totalCost;
-// }
 
 ///////////////////////////////////////////////////////////////////
 
@@ -295,7 +304,6 @@
 // );
 // returns {positive: 1, negative: 1, neutral:1}
 
-<<<<<<< HEAD
 // function gatherFeedback(feedbackArray) {
 //     let feedBack = { positive: 0, negative: 0, neutral: 0 };
 //     feedbackArray.forEach(([name, value]) => {
@@ -525,30 +533,28 @@ console.log(countCapitals("Hello World! How Are You?"));
 //   ])
 // );
 
-=======
-function gatherFeedback(feedbackArray) {
-    let feedBack = { positive: 0, negative: 0, neutral: 0 };
-    feedbackArray.forEach(([name, value]) => { 
-        if (value <= 10 && value >= 7) {
-          feedBack.positive++;
-        } else if (value <= 6 && value >= 4) {
-          feedBack.neutral++;
-        } else if (value <= 3 && value >= 0) {
-          feedBack.negative++;
-        } 
-    });
-    return feedBack
-} 
-console.log(
-  gatherFeedback([
-    ["maddie", 9],
-    ["jatinder", 6],
-    ["rose", 6],
-  ])
-)
+// function gatherFeedback(feedbackArray) {
+//     let feedBack = { positive: 0, negative: 0, neutral: 0 };
+//     feedbackArray.forEach(([name, value]) => { 
+//         if (value <= 10 && value >= 7) {
+//           feedBack.positive++;
+//         } else if (value <= 6 && value >= 4) {
+//           feedBack.neutral++;
+//         } else if (value <= 3 && value >= 0) {
+//           feedBack.negative++;
+//         } 
+//     });
+//     return feedBack
+// } 
+// console.log(
+//   gatherFeedback([
+//     ["maddie", 9],
+//     ["jatinder", 6],
+//     ["rose", 6],
+//   ])
+// )
 
 
->>>>>>> b8130f34271fdb242606888eeb13ea98a979d197
 ///////////////////////////////////////////////////////////////////
 
 // function orderSupplies(supplies, numGuests) {
