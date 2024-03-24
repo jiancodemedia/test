@@ -30,13 +30,13 @@
 
 ///////////////////////////////////////////////////////////////////
 
-function retrievePassword(user) {
-  if('password' in user) {
-      return user.password
-  }
-  else undefined
-  }
-  console.log(retrievePassword({ name: 'Lucy', password: 'n0rthc0derzzz' }))
+// function retrievePassword(user) {
+//   if('password' in user) {
+//       return user.password
+//   }
+//   else undefined
+//   }
+//   console.log(retrievePassword({ name: 'Lucy', password: 'n0rthc0derzzz' }))
 
   ///////////////////////////////////////////////////////////////////
 
