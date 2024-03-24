@@ -38,7 +38,7 @@
 //   }
 //   console.log(retrievePassword({ name: 'Lucy', password: 'n0rthc0derzzz' }))
 
-  ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 // function retrieveKey(object, key) {
 //     if (key in object) {
@@ -114,10 +114,17 @@
 ///////////////////////////////////////////////////////////////////
 
 // function greetGuest(name) {
-//     const a = name.charAt(0).toUpperCase() + name.slice(1)
-//     return `Hello ${a}!`
-//     }
-//     console.log(greetGuest("Douglas"))
+//   const a = name.charAt(0).toUpperCase() + name.slice(1);
+//   return `Hello ${a}!`;
+// }
+
+// function greetGuest(name) {
+//   const a = name.split('')
+//   a[0] =  'f'.toUpperCase()
+//   const b = a.join('')
+//   return `Hello ${b}!`;
+// }
+// console.log(greetGuest("douglas"));
 
 ///////////////////////////////////////////////////////////////////
 
@@ -399,17 +406,6 @@
 
 ///////////////////////////////////////////////////////////////////
 
-function countCapitals (str) {
-    let count = 0
-for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i].toUpperCase()) {
-        count++
-    }
-}
-return count
-}
-console.log(countCapitals("Hello World! How Are You?"));
-
 // function countCapitals(str) {
 //     let count = 0;
 //     for (let i = 0; i < str.length; i++) {
@@ -419,6 +415,7 @@ console.log(countCapitals("Hello World! How Are You?"));
 //     }
 //     return count;
 //   }
+// console.log(countCapitals("Hello World! How Are You?"));
 
 // function countCapitals(str) {
 //   let count = 0;
@@ -429,7 +426,6 @@ console.log(countCapitals("Hello World! How Are You?"));
 //   });
 //   return count;
 // }
-
 
 ///////////////////////////////////////////////////////////////////
 
@@ -501,9 +497,6 @@ console.log(countCapitals("Hello World! How Are You?"));
 // )
 
 // function oldestPerson(people) {
-//     if (people.length === 0) {
-//         return []; 
-//     }
 //   let oldestAge = people[0].age;
 //   let oldestName = people[0].name;
 //   for (let i = 1; i < people.length; i++) {
@@ -514,17 +507,16 @@ console.log(countCapitals("Hello World! How Are You?"));
 //   }
 //   return oldestName;
 // }
+
 // function oldestPerson(people) {
-//     let oldestAge = people[0].age; 
-//     let oldestName = people[0].name; 
-//     people.forEach(person => {
-//       if (person.age > oldestAge) {
-//         oldestAge = person.age; 
-//         oldestName = person.name; 
-//       }
-//     });
-//     return oldestName; 
-//   }
+//   let person = people[0];
+//   people.forEach((p) => {
+//     if (p.age > person.age) {
+//       person = p;
+//     }
+//   });
+//   return person.name;
+// }
 // console.log(
 //   oldestPerson([
 //     { name: "Alice", age: 30 },
@@ -533,27 +525,17 @@ console.log(countCapitals("Hello World! How Are You?"));
 //   ])
 // );
 
-// function gatherFeedback(feedbackArray) {
-//     let feedBack = { positive: 0, negative: 0, neutral: 0 };
-//     feedbackArray.forEach(([name, value]) => { 
-//         if (value <= 10 && value >= 7) {
-//           feedBack.positive++;
-//         } else if (value <= 6 && value >= 4) {
-//           feedBack.neutral++;
-//         } else if (value <= 3 && value >= 0) {
-//           feedBack.negative++;
-//         } 
-//     });
-//     return feedBack
-// } 
+// function oldestPerson(people) {
+//   const is = Math.max(...people.map((x) => x.age));
+//   return is;
+// }
 // console.log(
-//   gatherFeedback([
-//     ["maddie", 9],
-//     ["jatinder", 6],
-//     ["rose", 6],
+//   oldestPerson([
+//     { name: "Alice", age: 30 },
+//     { name: "Bob", age: 45 },
+//     { name: "Charlie", age: 5 },
 //   ])
-// )
-
+// );
 
 ///////////////////////////////////////////////////////////////////
 
@@ -716,3 +698,62 @@ console.log(countCapitals("Hello World! How Are You?"));
 // console.log(findItems(["a", "b"], ['c', 'a', "a"]));
 
 ///////////////////////////////////////////////////////////////////
+
+// function roundUp(n, x) {
+//   if (x === 0) {
+//     return -1
+//   }
+//   if (x > n) {
+//     return x
+//   }
+//   for (let index = 0; index < n; index++) {
+//     if (x * index >= n) {
+//       return x * index
+//     }
+//   }
+// }
+// console.log(roundUp(21, 5))
+
+///////////////////////////////////////////////////////////////////
+
+// function countShouts(string) {
+//   let count = 0;
+//   string.forEach((x) => {
+//     if (x.includes("!")) {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
+// console.log(countShouts(["hello!", "apple!", "salt"]));
+
+// const potato = {
+//   fresh: true,
+//   countShouts: (string) => {
+//     let count = 0;
+//     string.forEach((x) => {
+//       if (x.includes("!")) {
+//         count++;
+//       }
+//     });
+//     return count;
+//   }
+// };
+
+// console.log(potato.countShouts(["hello!", "apple!", "salt"]));
+
+const potato = {
+  fresh: true,
+  countShouts: (string) => {
+    let count = 0;
+    string.forEach((x) => {
+      if (x.includes("!")) {
+        count++;
+      }
+    });
+
+    console.log(count);
+  },
+};
+
+potato.countShouts(["hello!", "apple!", "salt"]);
