@@ -30,6 +30,16 @@
 
 ///////////////////////////////////////////////////////////////////
 
+// function retrievePassword(user) {
+//   if('password' in user) {
+//       return user.password
+//   }
+//   else undefined
+//   }
+//   console.log(retrievePassword({ name: 'Lucy', password: 'n0rthc0derzzz' }))
+
+  ///////////////////////////////////////////////////////////////////
+
 // function retrieveKey(object, key) {
 //     if (key in object) {
 //       return object[key];
@@ -74,7 +84,7 @@
 //   }
 //   let biggest = numbers[0];
 //   let smallest = numbers[0];
-//   numbers.forEach((x) => {
+//   numbers.forEach(x => {
 //     if (x > biggest) {
 //       biggest = x;
 //     }
@@ -178,6 +188,15 @@
 //     }
 //     console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2))
 
+// function orderSupplies(supplies, guests) {
+//   let totalCost = 0;
+//   for (let x in supplies) {
+//       totalCost += supplies[x] * guests;
+//   }
+//   return totalCost;
+// }
+// console.log(orderSupplies({ cake: 2, iceCream: 7 }, 2))
+
 ///////////////////////////////////////////////////////////////////
 
 // function calculateTables(guests, seats) {
@@ -206,16 +225,6 @@
 //   return { tables: tables, remainingGuests: remainingGuests };
 // }
 // console.log(calculateTables(100, 6));
-
-///////////////////////////////////////////////////////////////////
-
-// function orderSupplies(supplies, numGuests) {
-//   let totalCost = 0;
-//   for (let x in supplies) {
-//       totalCost += supplies[x] * numGuests;
-//   }
-//   return totalCost;
-// }
 
 ///////////////////////////////////////////////////////////////////
 
@@ -295,26 +304,255 @@
 // );
 // returns {positive: 1, negative: 1, neutral:1}
 
-function gatherFeedback(feedbackArray) {
-    let feedBack = { positive: 0, negative: 0, neutral: 0 };
-    feedbackArray.forEach(([name, value]) => { 
-        if (value <= 10 && value >= 7) {
-          feedBack.positive++;
-        } else if (value <= 6 && value >= 4) {
-          feedBack.neutral++;
-        } else if (value <= 3 && value >= 0) {
-          feedBack.negative++;
-        } 
-    });
-    return feedBack
-} 
-console.log(
-  gatherFeedback([
-    ["maddie", 9],
-    ["jatinder", 6],
-    ["rose", 6],
-  ])
-)
+// function gatherFeedback(feedbackArray) {
+//     let feedBack = { positive: 0, negative: 0, neutral: 0 };
+//     feedbackArray.forEach(([name, value]) => {
+//         if (value <= 10 && value >= 7) {
+//           feedBack.positive++;
+//         } else if (value <= 6 && value >= 4) {
+//           feedBack.neutral++;
+//         } else if (value <= 3 && value >= 0) {
+//           feedBack.negative++;
+//         }
+//     });
+//     return feedBack
+// }
+// console.log(
+//   gatherFeedback([
+//     ["maddie", 9],
+//     ["jatinder", 6],
+//     ["rose", 6],
+//   ])
+// )
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+// function checkForEnoughBeds(beds, numOfPeople) {
+//   if(beds.doubles * 2 + beds.singles >= numOfPeople) {
+//       return true
+//   }
+//   else {
+//     return false}
+//   }
+//   console.log(checkForEnoughBeds({ doubles: 0, singles: 6 }, 7))
+
+///////////////////////////////////////////////////////////////////
+
+// function makeAltArray(array) {
+//     if (array.length <= 1) {
+//         return array;
+//     }
+//     const result = [];
+//     array.forEach((element, index) => {
+//         if (index % 2 === 0) {
+//             result.push(element);
+//         }
+//     });
+//     return result;
+// }
+
+// // function makeAltArray (array) {
+// //     if (array.length <= 1) {
+// //         return array
+// //     }
+// //     const result = []
+// //     for (let i = 0; i < array.length; i += 2) {
+// //         result.push(array[i])
+// //     }
+// //     return result
+// // }
+// console.log(makeAltArray(['a', 'b', 'c', 'd', 1]))
+
+///////////////////////////////////////////////////////////////////
+
+// function addSoundToPets(pets) {
+//     pets.forEach(pet => {
+//       if (pet.type === 'dog') {
+//         pet.sound = 'woof!'
+//       }
+//       if(pet.type === 'cat') {
+//         pet.sound = 'meow!'
+//       }
+//     })
+//       return pets
+//     }
+
+// function addSoundToPets(pets) {
+//     for (let i = 0; i < pets.length; i++) {
+//      const pet = pets[i];
+//             if (pet.type === 'dog') {
+//           pet.sound = 'woof!';
+//             }
+//             if (pet.type === 'cat') {
+//           pet.sound = 'meow!';
+//             }
+//         }
+
+//         return pets;
+//     }
+// console.log(addSoundToPets([
+//   { name: 'Bolin', type: 'cat' },
+//   { name: 'Lily', type: 'dog' },
+// ]))
+
+///////////////////////////////////////////////////////////////////
+
+function countCapitals (str) {
+    let count = 0
+for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+        count++
+    }
+}
+return count
+}
+console.log(countCapitals("Hello World! How Are You?"));
+
+// function countCapitals(str) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//       if (str[i] >= 'A' && str[i] <= 'Z') {
+//         count++
+//       }
+//     }
+//     return count;
+//   }
+
+// function countCapitals(str) {
+//   let count = 0;
+//   str.split("").forEach((x) => {
+//     if (x >= "A" && x <= "Z") {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
+
+
+///////////////////////////////////////////////////////////////////
+
+// function findKnifeAndFork (utensils) {
+//   const found = {knife: 0, fork: 0}
+//   utensils.forEach(item => {
+//     if (item.toLowerCase() === 'knife') {
+//       found.knife++
+//     }
+//     if (item.toLowerCase() === 'fork') {
+//       found.fork++
+//     }
+//   });
+//   return found
+// }
+
+// function findKnifeAndFork(utensils) {
+//   const found = { knife: 0, fork: 0 };
+//   for (let i = 0; i < utensils.length; i++) {
+//     const item = utensils[i].toLowerCase();
+//     if (item === "knife") {
+//       found.knife++;
+//     }
+//     if (item === "fork") {
+//       found.fork++;
+//     }
+//   }
+//   return found;
+// }
+// console.log(findKnifeAndFork(["Knife", "fork", "spoon", "fOrk", "knife"]));
+
+///////////////////////////////////////////////////////////////////
+
+// function truncateString(str, value) {
+//     if (str.length > value) {
+//       return str.slice(0, value) + '...';
+//     }
+//     return str;
+//   }
+//   console.log(truncateString("Hello World", 4))
+
+///////////////////////////////////////////////////////////////////
+
+// function oldestPerson(people) {
+//   let oldestPerson = people[0];
+//   for (let i = 0; i < people.length; i++) {
+//     if (people[i].age > oldestPerson.age) {
+//       oldestPerson = people[i];
+//     }
+//   }
+//   return oldestPerson;
+// }
+
+// function oldestPerson(people) {
+//     let oldestPerson = people[0];
+//     people.forEach(person => {
+//       if (person.age > oldestPerson.age) {
+//         oldestPerson = person;
+//       }
+//     });
+//     return oldestPerson;
+//   }
+// console.log(
+//   oldestPerson([
+//     { name: "Alice", age: 30 },
+//     { name: "Bob", age: 45 },
+//     { name: "Charlie", age: 55 },
+//   ])
+// )
+
+// function oldestPerson(people) {
+//     if (people.length === 0) {
+//         return []; 
+//     }
+//   let oldestAge = people[0].age;
+//   let oldestName = people[0].name;
+//   for (let i = 1; i < people.length; i++) {
+//     if (people[i].age > oldestAge) {
+//       oldestAge = people[i].age;
+//       oldestName = people[i].name;
+//     }
+//   }
+//   return oldestName;
+// }
+// function oldestPerson(people) {
+//     let oldestAge = people[0].age; 
+//     let oldestName = people[0].name; 
+//     people.forEach(person => {
+//       if (person.age > oldestAge) {
+//         oldestAge = person.age; 
+//         oldestName = person.name; 
+//       }
+//     });
+//     return oldestName; 
+//   }
+// console.log(
+//   oldestPerson([
+//     { name: "Alice", age: 30 },
+//     { name: "Bob", age: 45 },
+//     { name: "Charlie", age: 5 },
+//   ])
+// );
+
+// function gatherFeedback(feedbackArray) {
+//     let feedBack = { positive: 0, negative: 0, neutral: 0 };
+//     feedbackArray.forEach(([name, value]) => { 
+//         if (value <= 10 && value >= 7) {
+//           feedBack.positive++;
+//         } else if (value <= 6 && value >= 4) {
+//           feedBack.neutral++;
+//         } else if (value <= 3 && value >= 0) {
+//           feedBack.negative++;
+//         } 
+//     });
+//     return feedBack
+// } 
+// console.log(
+//   gatherFeedback([
+//     ["maddie", 9],
+//     ["jatinder", 6],
+//     ["rose", 6],
+//   ])
+// )
 
 
 ///////////////////////////////////////////////////////////////////
@@ -328,17 +566,6 @@ console.log(
 //   return total * numGuests;
 // }
 // console.log(orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20));
-
-///////////////////////////////////////////////////////////////////
-
-// function checkForEnoughBeds(beds, numOfPeople) {
-//   if(beds.doubles * 2 + beds.singles >= numOfPeople) {
-//       return true
-//   }
-//   else {
-//     return false}
-//   }
-//   console.log(checkForEnoughBeds({ doubles: 0, singles: 6 }, 7))
 
 ///////////////////////////////////////////////////////////////////
 
